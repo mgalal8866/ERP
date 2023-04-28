@@ -35,25 +35,41 @@
                         <h2 class="brand-text text-primary ms-1">Vuexy</h2>
                     </a>
 
-                    <h4 class="card-title mb-1">Adventure starts here 🚀</h4>
-                    <p class="card-text mb-2">Make your app management easy and fun!</p>
+                    {{-- <h4 class="card-title mb-1">Adventure starts here 🚀</h4> --}}
+                    {{-- <p class="card-text mb-2">Make your app management easy and fun!</p> --}}
 
-                    <form class="auth-register-form mt-2" action="index.html" method="POST">
+                    <form class="auth-register-form mt-2" action="{{ route('register') }}" method="POST">
+                        @csrf
                         <div class="mb-1">
-                            <label for="register-username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="register-username" name="register-username" placeholder="johndoe" aria-describedby="register-username" tabindex="1" autofocus />
+                            <label for="name" class="form-label">Username</label>
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="johndoe" aria-describedby="name" tabindex="1" autofocus />
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                             @enderror
                         </div>
                         <div class="mb-1">
-                            <label for="register-email" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="register-email" name="register-email" placeholder="john@example.com" aria-describedby="register-email" tabindex="2" />
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="john@example.com" aria-describedby="email" tabindex="2" />
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
 
                         <div class="mb-1">
-                            <label for="register-password" class="form-label">Password</label>
+                            <label for="password" class="form-label">Password</label>
 
                             <div class="input-group input-group-merge form-password-toggle">
-                                <input type="password" class="form-control form-control-merge" id="register-password" name="register-password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="3" />
+                                <input type="password" class="form-control @error('password') is-invalid @enderror form-control-merge" id="password" name="password" aria-describedby="password" tabindex="3" />
                                 <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                         <div class="mb-1">
