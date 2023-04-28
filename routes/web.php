@@ -15,7 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
+Route::get('/jj',function()
+{
+$dir = new DirectoryIterator(public_path(''));
+foreach($dir as $file)
+{
+    if($file->isFile())
+    return 'dd'  . $file;
+}
 
+});
 
 Route::get('social-auth/{provider}/callback',[SocialLoginController::class,'providerCallback']);
 Route::get('social-auth/{provider}',[SocialLoginController::class,'redirectToProvider'])->name('social.redirect');
@@ -36,4 +45,5 @@ Route::group(
         });
     // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     });
+
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
