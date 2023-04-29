@@ -2,7 +2,10 @@
 
 use App\Http\Livewire\Customer\ViewCustomer;
 use App\Http\Livewire\Layouts\Dashboard\Home;
+use App\Http\Livewire\Pos\Pos;
+use App\Http\Livewire\Product\ViewProduct;
 use App\Http\Livewire\Welcome;
+use App\Models\customers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +31,14 @@ Auth::routes();
 // }
 // });
 
+Route::get('/cust',function()
+{
+$dir = customers::max('code');
+$code   = substr($dir, 2);
+$number = intval($code);
+$number++;
+dd( 'CO' . str_pad($number, 4, '0', STR_PAD_LEFT));
+});
 Route::get('social-auth/{provider}/callback',[SocialLoginController::class,'providerCallback']);
 Route::get('social-auth/{provider}',[SocialLoginController::class,'redirectToProvider'])->name('social.redirect');
 Route::group(
@@ -41,6 +52,8 @@ Route::group(
             ], function(){
                 Route::get('/dashboard', Home::class)->name('dashboard');
                 Route::get('/customer',  ViewCustomer::class)->name('customer');
+                Route::get('/product',  ViewProduct::class)->name('product');
+                Route::get('/pos',  Pos::class)->name('pos');
                 // Route::get('/roles', Roles::class)->name('roles');
                 // Route::get('/view/user', ViewUser::class)->name('viewuser');
                 // Route::get('/payment_method', function () {  return view('payment_method');})->name('payment_method');

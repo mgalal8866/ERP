@@ -35,14 +35,12 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="nav-item"><a class="d-flex align-items-center" href="{{route('dashboard')}}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">{{__('tran.dashboard')}}</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i><span class="menu-title text-truncate">{{__('tran.product')}}</span></a>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i><span class="menu-title text-truncate">{{__('tran.category')}}</span></a>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i><span class="menu-title text-truncate">{{__('tran.customer')}}</span></a>
-                </li>
-                <li class=" navigation-header"><span >{{__('tran.setting')}}</span><i data-feather="more-horizontal"></i>
-                </li>
+                <li class="nav-item"><a class="d-flex align-items-center" href="{{route('dashboard')}}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">{{__('tran.dashboard')}}</span></a></li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i><span class="menu-title text-truncate">{{__('tran.product')}}</span></a></li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i><span class="menu-title text-truncate">{{__('tran.category')}}</span></a></li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i><span class="menu-title text-truncate">{{__('tran.customer')}}</span></a></li>
+                <li class=" navigation-header"><span >{{__('tran.setting')}}</span><i data-feather="more-horizontal"></i></li>
+
                 {{-- <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('signin_method')}}"><i data-feather="credit-card"></i><span class="menu-title text-truncate">{{__('tran.login_method')}}</span></a>
                 </li> --}}
                 {{-- <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('payment_method')}}"><i data-feather="credit-card"></i><span class="menu-title text-truncate">{{__('tran.payment_method')}}</span></a>

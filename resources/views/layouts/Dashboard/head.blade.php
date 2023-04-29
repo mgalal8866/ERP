@@ -8,7 +8,9 @@
     @if (LaravelLocalization::getCurrentLocaleDirection() == 'rtl' )
         <!-- BEGIN: Vendor CSS-->
         <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/vendors-rtl.min.css')}}>
+        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/forms/select/select2.min.css')}}>
         <!-- END: Vendor CSS-->
+    
 
         <!-- BEGIN: Theme CSS-->
         <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/bootstrap.css')}}>
@@ -18,7 +20,7 @@
         <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/themes/dark-layout.css')}}>
         <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/themes/bordered-layout.css')}}>
         <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/themes/semi-dark-layout.css')}}>
-
+        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/extensions/toastr.min.css')}}>
         <!-- BEGIN: Page CSS-->
         <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/core/menu/menu-types/vertical-menu.css')}}>
         <!-- END: Page CSS-->
@@ -41,6 +43,7 @@
     <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/themes/dark-layout.css')}}>
     <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/themes/bordered-layout.css')}}>
     <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/themes/semi-dark-layout.css')}}>
+    <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/extensions/toastr.min.css')}}>
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/core/menu/menu-types/vertical-menu.css')}}>

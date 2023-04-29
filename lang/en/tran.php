@@ -1,6 +1,30 @@
 <?php
 
 return [
-'dashboard' => 'Dashboard',
+'dashboard'       => 'Dashboard',
+'name'            => 'Name',
+'code'            => 'Code',
+'brand'           => 'Brand',
+'address'         => 'Address',
+'phone'           => 'Phone',
+'birthday'        => 'Birth Day',
+'email'           => 'Email',
+'pricing'         => 'Pricing',
+'customers'       => 'Customers',
+'customer'        => 'Customer',
+'product'         => 'Products',
+'gomla'           => 'جملة',
+'gomlagomla'      => 'جملة الجملة',
+'halfgomla'       => 'نصف جملة',
+'pieces'          => 'قطاعى',
+'default'         => 'Default',
+'status'          => 'Status',
+'active'          => 'Active',
+'inactive'        => 'Inactive',
+'sucesscustomrt'  => 'Success ',
+'newcustomer'     => 'New Customer',
+'newproduct'      => 'New Product',
+'pos'             => 'POS',
+
 
 ];
