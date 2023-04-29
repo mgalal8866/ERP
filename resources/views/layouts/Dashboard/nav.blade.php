@@ -273,13 +273,16 @@
                             src={{URL::asset('app-assets/images/portrait/small/avatar-s-11.jpg')}} alt="avatar"
                             height="40" width="40"><span class="avatar-status-online"></span></span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item"
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
+                    <a class="dropdown-item"
                         href="page-profile.html"><i class="me-50" data-feather="user"></i> Profile</a><a
                         class="dropdown-item" href="app-email.html"><i class="me-50" data-feather="mail"></i> Inbox</a>
                     <a class="dropdown-item" href="app-todo.html"><i class="me-50" data-feather="check-square"></i>
-                        Task</a><a class="dropdown-item" href="app-chat.html"><i class="me-50"
+                        Task</a>
+                    <a class="dropdown-item" href="app-chat.html"><i class="me-50"
                             data-feather="message-square"></i> Chats</a>
-                    <div class="dropdown-divider"></div><a class="dropdown-item"
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"
                         href="page-account-settings-account.html"><i class="me-50" data-feather="settings"></i>
                         Settings</a><a class="dropdown-item" href="page-pricing.html"><i class="me-50"
                             data-feather="credit-card"></i> Pricing</a>

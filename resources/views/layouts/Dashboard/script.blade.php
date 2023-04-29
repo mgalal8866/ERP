@@ -6,9 +6,14 @@
 <!-- BEGIN Vendor JS-->
 
   <!-- BEGIN: Page Vendor JS-->
+<script src={{URL::asset('app-assets/vendors/js/editors/quill/katex.min.js')}}></script>
+<script src={{URL::asset('app-assets/vendors/js/editors/quill/highlight.min.js')}}></script>
+<script src={{URL::asset('app-assets/vendors/js/editors/quill/quill.min.js')}}></script>
   <!-- END: Page Vendor JS-->
 
   <!-- BEGIN: Theme JS-->
+  <script src={{URL::asset('app-assets/vendors/js/extensions/sweetalert2.all.min.js')}}></script>
+
   <script src={{URL::asset('app-assets/vendors/js/extensions/toastr.min.js')}}></script>
   <script src={{URL::asset('app-assets/js/core/app-menu.js')}}></script>
   <script src={{URL::asset('app-assets/js/core/app.js')}}></script>
@@ -32,7 +37,7 @@
 
       $(window).on('load', function() {
 
-      
+       
 
 
           if (feather) {
@@ -43,7 +48,7 @@
           }
       });
       if (window.location.hash === "#_=_"){
-    history.replaceState
+        history.replaceState
         ? history.replaceState(null, null, window.location.href.split("#")[0])
         : window.location.hash = "";
 }

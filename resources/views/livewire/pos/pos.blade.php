@@ -103,7 +103,7 @@
         $(document)
           .find('.select2-results__options')
           .before(
-            '<div class="add-new-customer btn btn-flat-success cursor-pointer rounded-0 text-start mb-50 p-50 w-100" data-bs-toggle="modal" data-bs-target="#add-new-customer-sidebar">' +
+            '<div class="add-new-customer btn btn-flat-success cursor-pointer rounded-0 text-start mb-50 p-50 w-100" data-bs-toggle="modal" data-bs-target="#newcustomer">' +
               feather.icons['plus'].toSvg({ class: 'font-medium-1 me-50' }) +
               '<span class="align-middle">Add New Customer</span></div>'
           );

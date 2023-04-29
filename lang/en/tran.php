@@ -25,6 +25,17 @@ return [
 'newcustomer'     => 'New Customer',
 'newproduct'      => 'New Product',
 'pos'             => 'POS',
+'barcode'         => 'Barcode',
+'subunit'         => 'Sub Unit',
+'mainunit'        => 'Main Unit',
+'description'     => 'Description',
+'price'           => 'Price',
+'perunit'         => 'Per Unit',
+'qtyalert'        => 'Alert Qty',
+'qty'             => 'Qty',
+'logout'          => 'Logout'
+
+
 
 
 ];

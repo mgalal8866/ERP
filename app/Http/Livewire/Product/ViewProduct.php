@@ -10,9 +10,15 @@ use Illuminate\Contracts\View\View;
 class ViewProduct extends Component
 {
     use WithPagination;
-    protected $listeners = ['view-customer' => '$refresh'];
+    protected $listeners = ['view-product' => '$refresh'];
     protected $paginationTheme = 'bootstrap';
 
+
+    public function demo()
+    {
+        $this->dispatchBrowserEvent('swal',['message'=>'DEMO  version   ' ]);
+    }
+    
     public function render(): View
     {
         $products = products::latest()->paginate(4);

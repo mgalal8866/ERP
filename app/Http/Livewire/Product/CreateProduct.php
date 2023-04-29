@@ -8,10 +8,10 @@ use Livewire\Component;
 
 class CreateProduct extends Component
 {
-    public $name,$barcode,$qtyalert,$subunit,$mainunit,$description,$price;
+    public $name,$barcode,$qtyalert,$subunit,$mainunit,$description,$price,$perunit;
 
     public function mount(){
-        $this->reset(['name', 'barcode', 'qtyalert', 'subunit', 'mainunit','description','price']);
+        $this->reset(['name','barcode','qtyalert','subunit','mainunit','description','price','perunit']);
 
     }
 
@@ -25,20 +25,20 @@ class CreateProduct extends Component
         //     $number++;
         //     $this->code =  'CO' . str_pad($number, 5, '0', STR_PAD_LEFT);
         // }
-        // $product = produts::create(
-        //     [
-        //         'name'      => $this->name,
-        //         'email'     => $this->email,
-        //         'code'      => $this->code,
-        //         'address'   => $this->address,
-        //         'phone'     => $this->phone,
-        //         'brand'     => $this->brand,
-        //         'birthday'  => $this->birthday,
-        //         'pricing'   => $this->pricing,
-        //     ]);
+        $product = products::create(
+            [
+                'name'        => $this->name,
+                'barcode'     => $this->barcode,
+                'alert_qty'   => $this->qtyalert??0,
+                'sub_unit'    => $this->subunit??'',
+                'main_unit'   => $this->mainunit??'',
+                'description' => $this->description,
+                'per_unit'    => $this->perunit,
+                'price'       => $this->price,
+            ]);
             $this->dispatchBrowserEvent('closeModal',['message'=> __('tran.sucesscustomrt') ]);
             $this->emit('view-product');
-            $this->reset(['name', 'barcode', 'qtyalert', 'subunit', 'mainunit','description','price']);
+            $this->reset(['name','barcode','qtyalert','subunit','mainunit','description','price','perunit']);
 
 
     }

@@ -13,6 +13,10 @@ class ViewCustomer extends Component
     protected $listeners = ['view-customer' => '$refresh'];
     protected $paginationTheme = 'bootstrap';
 
+    public function demo()
+    {
+        $this->dispatchBrowserEvent('swal',['message'=>'DEMO  version   ' ]);
+    }
     public function render(): View
     {
         $customers = customers::latest()->paginate(4);

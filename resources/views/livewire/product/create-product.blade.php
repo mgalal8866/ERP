@@ -16,54 +16,53 @@
                             <input type="text" wire:model.defer='name' id="modelname" name="modelname" class="form-control"   required />
                         </div>
                         <div class="col-12 col-md-6">
-                            <label class="form-label" for="modelbarcode">{{__('tran.barcod')}}</label>
-                            <input type="text" wire:model.defer='barcode' id="modelbarcode" name="modelbarcode" class="form-control"   />
+                            <label class="form-label" for="modelbarcode">{{__('tran.barcode')}}</label>
+                            <input type="text" wire:model.defer='barcode' id="modelbarcode" name="modelbarcode" class="form-control"   placeholder="524526624"/>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <label class="form-label" for="modelemail">{{__('tran.description')}}</label>
-                            <input type="email" wire:model.defer='description' id="modeldescription" name="modeldescription" class="form-control" required />
-                        </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-4">
                             <label class="form-label" for="modelmainunit">{{__('tran.mainunit')}}</label>
-                            <input type="text" wire:model.defer='mainunit' id="modelmainunit" name="modelmainunit" class="form-control" required />
+                            <input type="text" wire:model.defer='mainunit' id="modelmainunit" name="modelmainunit" class="form-control" placeholder="KG" required />
                         </div>
-                        <div class="col-12 col-md-6">
-                            <label class="form-label" for="modalperunit">{{__('tran.perunit')}}</label>
-                            <input type="text" wire:model.defer='perunit' id="modalperunit" name="modalperunit" class="form-control " />
-                        </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-4">
                             <label class="form-label" for="modalsubunit">{{__('tran.subunit')}}</label>
-                            <input type="text" wire:model.defer='subunit' id="modalsubunit" name="modalsubunit" class="form-control " />
+                            <input type="text" wire:model.defer='subunit' id="modalsubunit" name="modalsubunit" class="form-control " placeholder="Gram"/>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label class="form-label" for="modalperunit">{{__('tran.perunit')}}</label>
+                            <input type="text" wire:model.defer='perunit' id="modalperunit" name="modalperunit" class="form-control " placeholder="1000" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="modalprice">{{__('tran.price')}}</label>
-                            <input type="text" wire:model.defer='price' id="modalprice" name="modalprice" class="form-control " />
+                            <input type="text" wire:model.defer='price' id="modalprice" name="modalprice" class="form-control " placeholder="$000" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="modalqtyalert">{{__('tran.qtyalert')}}</label>
-                            <input type="text" wire:model.defer='qtyalert' id="modalqtyalert" name="modalqtyalert" class="form-control " />
+                            <input type="text" wire:model.defer='qtyalert' id="modalqtyalert" name="modalqtyalert" class="form-control " placeholder="0" />
                         </div>
                         <div class="col-12 col-md-6">
-                            <label class="form-label" for="modelpricing">{{__('tran.pricing')}}</label>
-                            <select id="modelpricing"  wire:model.defer='pricing' name="modelpricing" class="form-select" >
+                            <label class="form-label" for="modelpricing">{{__('tran.category')}}</label>
+                            <select id="modelcategory"   name="modelcategory" class="form-select" >
                                 <option value="null">{{__('tran.default')}}</option>
-                                <option value="1">{{__('tran.gomla')}}</option>
-                                <option value="2">{{__('tran.pieces')}}</option>
-                                <option value="3">{{__('tran.halfgomla')}}</option>
-                                <option value="4">{{__('tran.gomlagomla')}}</option>
+                                <option value="1">اجهزة</option>
+                                <option value="2">مشروبات</option>
+                                <option value="3">اداوت مكتبية</option>
                             </select>
                         </div>
+                        {{-- <div class="col-12 col-md-6">
+                            <label class="form-label" for="modelemail">{{__('tran.description')}}</label>
+                            <input type="email" wire:model.defer='description' id="modeldescription" name="modeldescription" class="form-control" required />
+                        </div> --}}
                         <div class="col-12">
-                            <label class="form-label" for="modeladdress">{{__('tran.address')}}</label>
-                            <input type="text" wire:model.defer='address' id="modeladdress" name="modeladdress" class="form-control" />
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <label class="form-label" for="modalbirthday">{{__('tran.birthday')}}</label>
-                            <input type="text" wire:model.defer='birthday' id="modalbirthday" name="modalbirthday" class="form-control " />
-                        </div>
+                            <div id="full-container">
+                                <div class="editor">
 
+
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-12 text-center mt-2 pt-50">
-                            <button type="submit" class="btn btn-primary me-1">Save</button>
+
+                            <button type="submit" onClick="callMe()" class="btn btn-primary me-1">Save</button>
                             <button type="reset" class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">
                                 Cancel
                             </button>
@@ -76,6 +75,73 @@
 </div>
     @push('jslive')
     <script>
+        var fullEditor = new Quill('#full-container .editor', {
+            bounds: '#full-container .editor',
+            modules: {
+                formula: true,
+                syntax: true,
+                toolbar: [
+                    [{
+                            font: []
+                        },
+                        {
+                            size: []
+                        }
+                    ],
+                    ['bold', 'italic', 'underline', 'strike'],
+                    [{
+                            color: []
+                        },
+                        {
+                            background: []
+                        }
+                    ],
+                    [{
+                            script: 'super'
+                        },
+                        {
+                            script: 'sub'
+                        }
+                    ],
+                    [{
+                            header: '1'
+                        },
+                        {
+                            header: '2'
+                        },
+                        'blockquote',
+                        'code-block'
+                    ],
+                    [{
+                            list: 'ordered'
+                        },
+                        {
+                            list: 'bullet'
+                        },
+                        {
+                            indent: '-1'
+                        },
+                        {
+                            indent: '+1'
+                        }
+                    ],
+                    [
+                        'direction',
+                        {
+                            align: []
+                        }
+                    ],
+                    ['link', 'image', 'video', 'formula'],
+                    ['clean']
+                ]
+            },
+            theme: 'snow'
+        });
+        function callMe() //display current HTML
+            {
+                var html = fullEditor.root.innerHTML;
+                @this.set('description', html);
+            }
         window.addEventListener('closeModal', event=> {
             var isRtl = $('html').attr('data-textdirection') === 'rtl';
             $("#newproduct").modal('hide');

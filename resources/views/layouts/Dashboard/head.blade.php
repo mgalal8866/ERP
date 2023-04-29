@@ -5,12 +5,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
     {{-- <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet"> --}}
     {{-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet"> --}}
+    <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/editors/quill/quill.snow.css')}}>
+    <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/extensions/sweetalert2.min.css')}}>
+
     @if (LaravelLocalization::getCurrentLocaleDirection() == 'rtl' )
-        <!-- BEGIN: Vendor CSS-->
+    <!-- BEGIN: Vendor CSS-->
         <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/vendors-rtl.min.css')}}>
         <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/forms/select/select2.min.css')}}>
         <!-- END: Vendor CSS-->
-    
+
 
         <!-- BEGIN: Theme CSS-->
         <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/bootstrap.css')}}>
