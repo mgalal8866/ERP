@@ -92,11 +92,22 @@
 </div>
 @push('jslive')
 <script>
+    window.addEventListener('swal', event=> {
+
+      Swal.fire({
+        title: event.detail.message,
+        icon: 'info',
+        customClass: {
+          confirmButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        });
+    })
 
   var select = $('.select2');
-  $(document).on('click', '.add-new-customer', function () {
-    select.select2('close');
-  });
+    $(document).on('click', '.add-new-customer', function () {
+        select.select2('close');
+    });
 
   select.on('select2:open', function () {
       if (!$(document).find('.add-new-customer').length) {

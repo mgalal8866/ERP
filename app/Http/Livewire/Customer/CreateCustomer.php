@@ -17,13 +17,13 @@ class CreateCustomer extends Component
     public function savecustomer()
     {
         ##CREATE CUSTOMER
-        if($this->code == null){
-            $Gcode      = customers::max('code');
-            $Gcode      = substr($Gcode, 2);
-            $number     = intval($Gcode);
-            $number++;
-            $this->code =  'CO' . str_pad($number, 5, '0', STR_PAD_LEFT);
-        }
+        // if($this->code == null){
+        //     $Gcode      = customers::max('code');
+        //     $Gcode      = substr($Gcode, 2);
+        //     $number     = intval($Gcode);
+        //     $number++;
+        //     $this->code =  'CO' . str_pad($number, 5, '0', STR_PAD_LEFT);
+        // }
         $customer = customers::create(
             [
                 'name'      => $this->name,
@@ -37,6 +37,7 @@ class CreateCustomer extends Component
             ]);
             $this->dispatchBrowserEvent('closeModal',['message'=> __('tran.sucesscustomrt') ]);
             $this->emit('view-customer');
+            $this->emit('update-customer');
             $this->reset(['name', 'email', 'code', 'address', 'phone','brand','birthday','pricing']);
 
 
