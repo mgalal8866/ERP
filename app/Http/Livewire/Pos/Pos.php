@@ -21,7 +21,7 @@ class Pos extends Component
     }
     public function demo()
     {
-        $this->dispatchBrowserEvent('swal',['message'=>'DEMO  version   ' ]);
+        $this->dispatchBrowserEvent('swal',['message'=>'DEMO  version  11' ]);
     }
     public function render()
     {
