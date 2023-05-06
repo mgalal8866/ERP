@@ -25,6 +25,7 @@ class Pos extends Component
     }
     public function render()
     {
+        
         // $customers = customers::all();
         return view('livewire.pos.pos');
     }
