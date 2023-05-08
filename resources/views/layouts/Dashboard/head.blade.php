@@ -9,52 +9,49 @@
     <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/extensions/sweetalert2.min.css')}}>
     <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/forms/select/select2.min.css')}}>
     <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/extensions/toastr.min.css')}}>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
 
     @if (LaravelLocalization::getCurrentLocaleDirection() == 'rtl' )
-    <!-- BEGIN: Vendor CSS-->
-        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/vendors-rtl.min.css')}}>
+        <!-- BEGIN: Vendor CSS-->
+            <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/vendors-rtl.min.css')}}>
+            <!-- END: Vendor CSS-->
+            <!-- BEGIN: Theme CSS-->
+            <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/bootstrap.css')}}>
+            <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/bootstrap-extended.css')}}>
+            <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/colors.css')}}>
+            <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/components.css')}}>
+            <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/themes/dark-layout.css')}}>
+            <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/themes/bordered-layout.css')}}>
+            <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/themes/semi-dark-layout.css')}}>
+            <!-- BEGIN: Page CSS-->
+            <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/core/menu/menu-types/vertical-menu.css')}}>
+            <!-- END: Page CSS-->
+            <!-- BEGIN: Custom CSS-->
+            <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/custom-rtl.css')}}>
+            <link rel="stylesheet" type="text/css" href={{URL::asset('assets/css/style-rtl.css')}}>
+            <!-- END: Custom CSS-->
+            @else
+            <!-- BEGIN: Vendor CSS-->
+            <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/vendors-rtl.min.css')}}>
         <!-- END: Vendor CSS-->
 
-
         <!-- BEGIN: Theme CSS-->
-        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/bootstrap.css')}}>
-        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/bootstrap-extended.css')}}>
-        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/colors.css')}}>
-        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/components.css')}}>
-        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/themes/dark-layout.css')}}>
-        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/themes/bordered-layout.css')}}>
-        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/themes/semi-dark-layout.css')}}>
+        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/bootstrap.css')}}>
+        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/bootstrap-extended.css')}}>
+        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/colors.css')}}>
+        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/components.css')}}>
+        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/themes/dark-layout.css')}}>
+        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/themes/bordered-layout.css')}}>
+        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/themes/semi-dark-layout.css')}}>
+
+
         <!-- BEGIN: Page CSS-->
-        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/core/menu/menu-types/vertical-menu.css')}}>
+        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/core/menu/menu-types/vertical-menu.css')}}>
         <!-- END: Page CSS-->
 
         <!-- BEGIN: Custom CSS-->
-        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css-rtl/custom-rtl.css')}}>
-        <link rel="stylesheet" type="text/css" href={{URL::asset('assets/css/style-rtl.css')}}>
+        <link rel="stylesheet" type="text/css" href={{URL::asset('assets/css/style.css')}}>
         <!-- END: Custom CSS-->
-
-        @else
-        <!-- BEGIN: Vendor CSS-->
-        <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/vendors/css/vendors-rtl.min.css')}}>
-    <!-- END: Vendor CSS-->
-
-    <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/bootstrap.css')}}>
-    <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/bootstrap-extended.css')}}>
-    <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/colors.css')}}>
-    <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/components.css')}}>
-    <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/themes/dark-layout.css')}}>
-    <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/themes/bordered-layout.css')}}>
-    <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/themes/semi-dark-layout.css')}}>
-
-
-    <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href={{URL::asset('app-assets/css/core/menu/menu-types/vertical-menu.css')}}>
-    <!-- END: Page CSS-->
-
-    <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href={{URL::asset('assets/css/style.css')}}>
-    <!-- END: Custom CSS-->
 
     @endif
 

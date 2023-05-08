@@ -68,10 +68,13 @@
                 <div   class="col-12 col-md-6 ">
 
                 </div>
-                <div   class="col-12 col-md-6 ">
-                    <label class="form-label" for="first-name-icon">{{__('tran.customer')}}</label>
+                <div  class="col-12 col-md-6 ">
+
+                    <x-label  for="name" :value="__('tran.customer')"  tooltip="اختار العميل" />
+                    {{-- <x-select2  for="name" :value="__('tran.customer')"  tooltip="اختار العميل" /> --}}
                     <div wire:ignore class=" d-flex " style="flex-warp:nwrap !important">
-                        <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+                        <i  data-feather="user"></i>
+
                         <select class="select2 form-select" id="select2" >
                             <option value="">Walk-In Customer</option>
                             @foreach($customers as $customer)
@@ -105,6 +108,7 @@
     })
 
   var select = $('.select2');
+
     $(document).on('click', '.add-new-customer', function () {
         select.select2('close');
     });
@@ -122,17 +126,18 @@
     });
   select.each(function() {
         var $this = $(this)
+        // var search = $this.val();
+        // console.log(search);
         $this.wrap('<div style="width: 100%;" class="position-relative"></div>');
         // $this.wrap('<div class="position-relative"></div>');
         $this.select2({
-            // the following code is used to disable x-scrollbar when click in select input and
-            // take 100% width in responsive also
             dropdownAutoWidth: true,
             width: '100%',
             dropdownParent: $this.parent()
         });
+
         $('#select2').on('change', function (e) {
-                var data = $('#select2').select2("val");
+            var data = $('#select2').select2("val");
             @this.set('selected', data);
         });
     });

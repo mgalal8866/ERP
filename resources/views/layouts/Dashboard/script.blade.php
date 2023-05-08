@@ -36,16 +36,14 @@
         $(".navigation a[href='" + window.location.href + "']").closest('li').addClass('active');
 
       $(window).on('load', function() {
-
-       
-
-
           if (feather) {
               feather.replace({
-                  width: 14,
-                  height: 14
+                  width: 16,
+                  height: 16    
               });
           }
+          $('[data-bs-toggle="tooltip"]').tooltip();
+
       });
       if (window.location.hash === "#_=_"){
         history.replaceState
